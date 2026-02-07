@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gyaan Institute Design System - Playful, Colorful, Student-Friendly */
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 180 40% 98%;
+    --foreground: 220 30% 15%;
+    
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+    
+    /* Primary - Vibrant Teal */
+    --primary: 174 72% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Lavender */
+    --secondary: 270 60% 95%;
+    --secondary-foreground: 270 50% 35%;
+    
+    /* Accent - Energetic Orange */
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Fun Colors */
+    --fun-yellow: 45 95% 60%;
+    --fun-pink: 330 85% 65%;
+    --fun-purple: 270 70% 60%;
+    --fun-blue: 210 90% 55%;
+    --fun-green: 150 70% 50%;
+    
+    /* Muted */
+    --muted: 180 20% 94%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 180 25% 88%;
+    --input: 180 25% 88%;
+    --ring: 174 72% 45%;
+    
+    /* Radius */
+    --radius: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 180 30% 95%;
+    --card: 220 25% 14%;
+    --card-foreground: 180 30% 95%;
+    --popover: 220 25% 14%;
+    --popover-foreground: 180 30% 95%;
+    --primary: 174 72% 50%;
+    --primary-foreground: 220 30% 10%;
+    --secondary: 270 40% 25%;
+    --secondary-foreground: 270 60% 90%;
+    --muted: 220 20% 20%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 174 72% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(174 72% 45% / 0.1), hsl(270 70% 60% / 0.1), hsl(25 95% 55% / 0.1));
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(174 72% 45%), hsl(180 80% 35%));
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(25 95% 55%), hsl(45 95% 60%));
+  }
+  
+  .gradient-fun {
+    background: linear-gradient(135deg, hsl(330 85% 65%), hsl(270 70% 60%));
+  }
+  
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(174 72% 45%), hsl(210 90% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(25 95% 55%), hsl(45 95% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-fun {
+    @apply bg-card rounded-2xl p-6 shadow-lg border-2 border-transparent transition-all duration-300;
+    box-shadow: 0 10px 40px -10px hsl(174 72% 45% / 0.15);
+  }
+  
+  .card-fun:hover {
+    @apply border-primary/20;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -15px hsl(174 72% 45% / 0.25);
+  }
+  
+  .blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
